@@ -1,0 +1,14 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Package for portfolio project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Miro Hagelberg",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
