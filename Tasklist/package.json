@@ -4,7 +4,7 @@
   "description": "Package for portfolio project",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "author": "Miro Hagelberg",
   "license": "ISC",
