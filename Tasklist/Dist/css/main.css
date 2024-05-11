@@ -1,3 +1,94 @@
+.buttons-div {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  transition: all 1s ease-out; }
+  .buttons-div .hamburger {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #EEEEEE;
+    transition: all 1s ease-out; }
+  .buttons-div.close {
+    transform: rotate(180deg); }
+    .buttons-div.close .hamburger:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .buttons-div.close .hamburger:nth-child(2) {
+      opacity: 0; }
+    .buttons-div.close .hamburger:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-photo, .menu-links {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-links {
+    margin: 0;
+    padding: 0;
+    background: #31363F;
+    list-style: none;
+    transform: translate3d(0, 100%, 0);
+    transition: all 1s ease-out; }
+    .menu-links.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-photo {
+    background: #222831;
+    transform: translate3d(0, -100%, 0);
+    transition: all 1s ease-out; }
+    .menu-photo.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-photo .photo {
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait.jpg");
+      border-radius: 50%;
+      border: solid 3px #76ABAE; }
+  .menu .link-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 1s ease-out; }
+    .menu .link-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .link-item.current > a {
+      color: #76ABAE; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #EEEEEE;
+    text-decoration: none;
+    transition: all 1s ease-out; }
+    .menu .nav-link:hover {
+      color: #76ABAE; }
+
+.link-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.link-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.link-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.link-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
 * {
   box-sizing: border-box; }
 
@@ -59,7 +150,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #76ABAE;
-        transition: all 1.5s ease-out; }
+        transition: all 1s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
