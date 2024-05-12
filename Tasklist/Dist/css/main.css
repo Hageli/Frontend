@@ -4,13 +4,13 @@
   top: 35px;
   right: 35px;
   cursor: pointer;
-  transition: all 1s ease-out; }
+  transition: all 0.5s ease-out; }
   .buttons-div .hamburger {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #EEEEEE;
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
   .buttons-div.close {
     transform: rotate(180deg); }
     .buttons-div.close .hamburger:nth-child(1) {
@@ -42,13 +42,13 @@
     background: #31363F;
     list-style: none;
     transform: translate3d(0, 100%, 0);
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-links.show {
       transform: translate3d(0, 0, 0); }
   .menu-photo {
     background: #222831;
     transform: translate3d(0, -100%, 0);
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-photo.show {
       transform: translate3d(0, 0, 0); }
     .menu-photo .photo {
@@ -59,7 +59,7 @@
       border: solid 3px #76ABAE; }
   .menu .link-item {
     transform: translate3d(600px, 0, 0);
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .link-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .link-item.current > a {
@@ -73,7 +73,7 @@
     font-weight: 300;
     color: #EEEEEE;
     text-decoration: none;
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       color: #76ABAE; }
 
@@ -151,7 +151,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #76ABAE;
-        transition: all 1s ease-out; }
+        transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -181,6 +181,54 @@ main {
     padding: 0.5rem;
     border-bottom: 5px solid #76ABAE; }
 
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px solid #EEEEEE; }
+    .projects img:hover {
+      border: 3px solid #76ABAE;
+      opacity: 0.5;
+      transition: all 0.5s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px solid #EEEEEE;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #76ABAE;
+      color: #222831; }
+      .boxes div:hover span {
+        color: #222831; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #76ABAE;
+    color: #EEEEEE; }
+
+.btn-dark {
+  background: #31363F;
+  color: #EEEEEE; }
+
+.btn-light {
+  background: #EEEEEE;
+  color: #222831; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -188,7 +236,17 @@ main {
   color: #EEEEEE;
   height: 60px; }
 
+@media screen and (min-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
+
 @media screen and (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); }
   main {
     align-items: center;
     text-align: center; }
@@ -216,5 +274,7 @@ main {
     grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 580px) {
+  .projects {
+    grid-template-columns: 1fr; }
   main#home h1 {
     margin-top: 10vh; } }
