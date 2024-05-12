@@ -15,6 +15,7 @@ $background-opacity: 0.85;
 }
 
 @mixin backgroundSetup {
+    background: $color-one;
     @if $show-home-image {
         &#background-image {
             background: $background;
@@ -32,5 +33,41 @@ $background-opacity: 0.85;
                 background: rgba($color-one, $background-opacity);
             }
         }
+    }
+}
+
+// FUNCTIONS
+
+@function set_text_color($color) {
+    @if (lightness($color) > 40) {
+        @return $color-one;
+    } @else {
+        @return $color-four;
+    }
+}
+
+// MEDIA QUERIES
+
+@mixin mediaSm {
+    @media screen and (max-width: 580px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1170px) {
+        @content;
     }
 }
